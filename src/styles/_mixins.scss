@@ -1,0 +1,12 @@
+@import "themes";
+
+@mixin themeStyles($mode) {
+  @each $key, $map in $themes {
+    @each $prop, $color in $map {
+      @if $prop == $mode {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
+
