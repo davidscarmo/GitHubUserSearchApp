@@ -10,3 +10,20 @@
   }
 }
 
+@mixin desktopBreakpoint {
+  @media (min-width: $desktop-screen-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tabletBreakpoint {
+  @media (min-width: $tablet-screen-breakpoint) and (max-width: $desktop-screen-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mobileBreakpoint {
+  @media (max-width: $tablet-screen-breakpoint) {
+    @content;
+  }
+}
