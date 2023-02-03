@@ -12,9 +12,8 @@ $themes: (
   button-bg-color: (
     darkTheme: $bright-sky-blue,
     lightTheme: $bright-sky-blue,
-  )
-  primary-text-color:
-  (
+  ),
+  primary-text-color: (
     darkTheme: $snow-white,
     lightTheme: $dark-olive-green,
   ),
@@ -22,8 +21,12 @@ $themes: (
     darkTheme: $snow-white,
     lightTheme: $deep-indigo,
   ),
-  error-text-color:  (
+  error-text-color: (
     darkTheme: $fire-engine-red,
     lightTheme: $fire-engine-red,
+  ),
+  text-theme-button-color: (
+    darkTheme: $snow-white,
+    lightTheme: $soft-gunmetal-gray,
   ),
 );

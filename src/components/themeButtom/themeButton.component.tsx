@@ -1,12 +1,22 @@
-import React from "react";
-import { useTheme } from "../../hooks/useTheme";
+import styles from "./themeButton.module.scss";
 
+import { useTheme } from "../../hooks/useTheme";
+import darkIconTheme from "../../assets/icons/icon-moon.svg";
+import lightIconTheme from "../../assets/icons/icon-sun.svg";
 export const ThemeButton = () => {
   const { theme, toggleTheme } = useTheme();
+  const nextTheme = theme === "dark" ? "light" : "dark";
+
+  const formattedThemeName = nextTheme.toUpperCase();
+
+  const iconThemeUrl = nextTheme === "dark" ? darkIconTheme : lightIconTheme;
 
   return (
-    <div>
-      <button onClick={() => toggleTheme()}>{theme} </button>
-    </div>
+    <>
+      <button className={styles.container} onClick={() => toggleTheme()}>
+        <span>{formattedThemeName}</span>
+        <img src={iconThemeUrl} alt={`${theme} symbol`} />
+      </button>
+    </>
   );
 };
