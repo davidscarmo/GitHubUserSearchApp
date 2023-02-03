@@ -5,4 +5,25 @@ $themes: (
     darkTheme: $dark-blue-gray,
     lightTheme: $pale-pearl-white,
   ),
+  secondary-bg-color: (
+    darkTheme: $deep-cobalt-blue,
+    lightTheme: $pure-white,
+  ),
+  button-bg-color: (
+    darkTheme: $bright-sky-blue,
+    lightTheme: $bright-sky-blue,
+  )
+  primary-text-color:
+  (
+    darkTheme: $snow-white,
+    lightTheme: $dark-olive-green,
+  ),
+  secondary-text-color: (
+    darkTheme: $snow-white,
+    lightTheme: $deep-indigo,
+  ),
+  error-text-color:  (
+    darkTheme: $fire-engine-red,
+    lightTheme: $fire-engine-red,
+  ),
 );
