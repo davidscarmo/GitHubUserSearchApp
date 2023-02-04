@@ -1,0 +1,27 @@
+@import "./../../styles/mixins";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 1.9375rem;
+
+  .logoContainer {
+    .logo {
+      font-size: 1.625rem;
+      font-weight: bold;
+      line-height: 2.4069rem;
+      color: var(--text-logo-color);
+
+      @include tabletBreakpoint {
+        font-size: 1.625rem;
+        line-height: 2.4375rem;
+      }
+      @include desktopBreakpoint {
+        font-size: 1.625rem;
+        line-height: 2.4375rem;
+      }
+    }
+  }
+}

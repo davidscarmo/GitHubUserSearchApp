@@ -1,0 +1,12 @@
+@import "../../styles/mixins";
+.container {
+  padding: 0 6.4%;
+
+  @include tabletBreakpoint {
+    padding: 0 12.76%;
+  }
+
+  @include desktopBreakpoint {
+    padding: 0 24.65%;
+  }
+}
