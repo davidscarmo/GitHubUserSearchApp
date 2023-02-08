@@ -28,3 +28,21 @@
     @content;
   }
 }
+
+@mixin breakpoints($keys...) {
+  @each $key in $keys {
+    @if ($key == mobile) {
+      @include mobileBreakpoint {
+        @content;
+      }
+    } @else if ($key == tablet) {
+      @include tabletBreakpoint {
+        @content;
+      }
+    } @else if ($key == desktop) {
+      @include desktopBreakpoint {
+        @content;
+      }
+    }
+  }
+}

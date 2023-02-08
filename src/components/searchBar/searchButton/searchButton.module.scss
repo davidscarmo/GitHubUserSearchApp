@@ -1,0 +1,32 @@
+@import "../../../styles/mixins";
+
+.container {
+  display: flex;
+  align-items: center;
+
+  width: 5.25rem;
+  height: 2.875rem;
+  padding: 1rem;
+  background-color: var(--search-button-bg-color);
+  border-radius: 0.625rem;
+
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: bold;
+  color: var(--text-search-button-color);
+
+  cursor: url("../../../assets/icons/customCursor.svg"), auto;
+
+  &:hover {
+    background-color: var(--search-button-bg-hover-color);
+    transition: background-color 0.5s ease;
+  }
+  @include breakpoints(tablet, desktop) {
+    width: 6.625rem;
+    height: 3.125rem;
+    padding: 0.8125rem 1.4688rem;
+
+    font-size: 1rem;
+    line-height: 1.4812rem;
+  }
+}

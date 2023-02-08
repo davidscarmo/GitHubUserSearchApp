@@ -32,5 +32,17 @@ $themes: (
   text-logo-color: (
     darkTheme: $snow-white,
     lightTheme: $dark-slate-gray,
-  )
+  ),
+  text-search-button-color: (
+    darkTheme: $snow-white,
+    lightTheme: $snow-white,
+  ),
+  search-button-bg-color: (
+    darkTheme: $bright-sky-blue,
+    lightTheme: $bright-sky-blue,
+  ),
+  search-button-bg-hover-color: (
+    darkTheme: $baby-blue,
+    lightTheme: $baby-blue,
+  ),
 );
