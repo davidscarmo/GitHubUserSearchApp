@@ -1,0 +1,61 @@
+@import "../../styles/mixins";
+
+.container {
+  display: flex;
+  align-items: center;
+
+  margin-top: 2.25rem;
+  min-width: 20.4375rem;
+  height: 3.75rem;
+  padding: 0.4375rem 0.4375rem 0.4375rem 1rem;
+
+  background-color: var(--search-bar-bg-color);
+  border-radius: 0.9375rem;
+
+  @include breakpoints(tablet, desktop) {
+    height: 4.3125rem;
+  }
+  .imageContainer {
+    display: flex;
+    align-items: center;
+  }
+  .input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    margin-left: 0.5625rem;
+
+    font-size: 0.8125rem;
+    color: var(--search-bar-input-text-color);
+    outline: transparent;
+
+    caret-color: var(--search-bar-caret-color);
+    @include breakpoints(tablet, desktop) {
+      font-size: 1.125rem;
+    }
+    &::placeholder {
+      font-size: 0.8125rem;
+      line-height: 1.5625rem;
+      color: var(--search-bar-input-text-color);
+      @include breakpoints(tablet, desktop) {
+        font-size: 1.125rem;
+      }
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+  .noResults {
+    min-width: 10ch;
+    margin-right: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--error-text-color);
+
+    @include breakpoints(tablet, desktop) {
+      font-size: 0.9375rem;
+    }
+  }
+  .buttonContainer {
+  }
+}

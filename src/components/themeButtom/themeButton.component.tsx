@@ -1,8 +1,8 @@
 import styles from "./themeButton.module.scss";
 
 import { useTheme } from "../../hooks/useTheme";
-import darkIconTheme from "../../assets/icons/icon-moon.svg";
-import lightIconTheme from "../../assets/icons/icon-sun.svg";
+import darkIconTheme from "../../assets/icons/iconMoon.svg";
+import lightIconTheme from "../../assets/icons/iconSun.svg";
 export const ThemeButton = () => {
   const { theme, toggleTheme } = useTheme();
   const nextTheme = theme === "dark" ? "light" : "dark";
