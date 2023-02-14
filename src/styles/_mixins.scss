@@ -46,3 +46,27 @@
     }
   }
 }
+
+@mixin typographyHeading($heading) {
+  @if ($heading == h1) {
+    color: var(--primary-text-color);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    @include breakpoints(desktop, tablet) {
+      font-size: 1.625rem;
+      line-height: 2.4375rem;
+    }
+  }@else if ($heading == h3) {
+    color: var(--github-link-text-color);
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.1875rem;
+    @include breakpoints(desktop, tablet) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+
+}

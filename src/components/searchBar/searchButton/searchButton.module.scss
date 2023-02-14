@@ -19,7 +19,7 @@
 
   &:hover {
     background-color: var(--search-button-bg-hover-color);
-    transition: background-color 0.5s ease;
+    transition: background-color 0.2s ease;
   }
   @include breakpoints(tablet, desktop) {
     width: 6.625rem;
