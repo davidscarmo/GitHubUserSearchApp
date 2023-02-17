@@ -57,7 +57,7 @@
       font-size: 1.625rem;
       line-height: 2.4375rem;
     }
-  }@else if ($heading == h3) {
+  } @else if ($heading == h3) {
     color: var(--github-link-text-color);
     font-weight: 400;
     font-size: 0.8125rem;
@@ -67,6 +67,16 @@
       line-height: 1.5rem;
     }
   }
+}
 
+@mixin typographyBody() {
+  color: var(--primary-text-color);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.5625rem;
 
+  @include breakpoints(desktop, tablet) {
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+  }
 }
