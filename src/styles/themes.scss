@@ -61,4 +61,10 @@ $themes: (
     darkTheme: $bright-sky-blue,
     lightTheme: $bright-sky-blue,
   ),
+  filter-link-svg-color: (
+    darkTheme: invert(100%) sepia(0%) saturate(0%) hue-rotate(17deg)
+      brightness(102%) contrast(105%),
+    lightTheme: invert(34%) sepia(93%) saturate(343%) hue-rotate(178deg)
+      brightness(90%) contrast(75%),
+  ),
 );

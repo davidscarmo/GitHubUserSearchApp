@@ -8,6 +8,8 @@
 
   background-color: var(--primary-bg-color);
   margin-top: 1.4375rem;
+
+  border-radius: 0.625rem;
   @include breakpoints(desktop, tablet) {
     margin-top: 2rem;
   }
