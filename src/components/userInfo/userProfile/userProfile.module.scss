@@ -6,13 +6,13 @@
     .imageContainer {
       height: 4.375rem;
       width: 4.375rem;
-
       @include breakpoints(desktop, tablet) {
         height: 7.3125rem;
         width: 7.3125rem;
       }
-
+      
       img {
+        border-radius: 50%;
         width: 100%;
         height: auto;
       }
