@@ -1,27 +1,27 @@
 import styles from "./userProfile.module.scss";
 
 import octocatImage from "../../../assets/images/octocat.svg";
-export const UserProfile = () => {
+import { UserProfileProps } from "./userProfile.interface";
+export const UserProfile: React.FC<UserProfileProps> = ({ avatarURL, description, joined, name, username }) => {
   return (
     <div className={styles.container}>
       <div className={styles.userProfileInfoContainer}>
         <div className={styles.imageContainer}>
-          <img src={octocatImage} alt="" />
+          <img src={avatarURL} alt="" />
         </div>
         <div className={styles.profileInfoContainer}>
           <div className={styles.infoContainer}>
-            <h1>The Octocat</h1>
-            <a>@octocat</a>
+            <h1>{name ? name : '---'}</h1>
+            <a>{username ? `@${username}` : '---'}</a>
           </div>
           <div className={styles.joinedContainer}>
-            <p>Joined 25 Jan 2011</p>
+            <p>{joined ? `Joined ${joined}` : null}</p>
           </div>
         </div>
       </div>
       <div className={styles.bioContainer}>
         <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-          Quisque volutpat mattis eros.
+          {description}
         </p>
       </div>
     </div>

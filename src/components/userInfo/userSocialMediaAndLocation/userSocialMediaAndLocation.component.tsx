@@ -3,26 +3,28 @@ import locationIcon from "../../../assets/icons/iconLocation.svg";
 import companyIcon from "../../../assets/icons/iconCompany.svg";
 import webSiteIcon from "../../../assets/icons/iconWebsite.svg";
 import twitterIcon from "../../../assets/icons/iconTwitter.svg";
+import { UserSocialMediaPropsInterface } from "./userSocialMediaAndLocation.interface";
 
-const userSocialMediaAndLocationData = [
-  {
-    image: locationIcon,
-    description: "São Paulo - SP",
-  },
-  {
-    image: webSiteIcon,
-    description: "São Paulo - SP",
-  },
-  {
-    image: twitterIcon,
-    description: "",
-  },
-  {
-    image: companyIcon,
-    description: "@github",
-  },
-];
-export const UserSocialMediaAndLocation = () => {
+
+export const UserSocialMediaAndLocation: React.FC<UserSocialMediaPropsInterface> = ({ companyName, location, twitterUsername, website }) => {
+  const userSocialMediaAndLocationData = [
+    {
+      image: locationIcon,
+      description: location,
+    },
+    {
+      image: webSiteIcon,
+      description: website,
+    },
+    {
+      image: twitterIcon,
+      description: twitterUsername,
+    },
+    {
+      image: companyIcon,
+      description: companyName ? '@' + companyName : null
+    },
+  ];
   return (
     <div className={styles.container}>
       {userSocialMediaAndLocationData.map((socialMediaAndLocation) => {
@@ -36,7 +38,7 @@ export const UserSocialMediaAndLocation = () => {
               <img
                 src={socialMediaAndLocation.image}
                 className={styles.image}
-                alt=""
+                alt=" "
               />
             </div>
             <div className={styles.linkContent}>

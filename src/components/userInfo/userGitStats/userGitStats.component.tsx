@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./userGitStats.module.scss";
-const gitStatsData = [
-  { title: "Repos", content: "8" },
-  { title: "Followers", content: "3938" },
-  { title: "Following", content: "9" },
-];
-export const UserGitStats = () => {
+import { UserGitStatsPropsInterface } from "./userGitStats.interface";
+
+export const UserGitStats: React.FC<UserGitStatsPropsInterface> = ({ followers, following, repos }) => {
+  const gitStatsData = [
+    { title: "Repos", content: repos ?? '---' },
+    { title: "Followers", content: followers ?? '---' },
+    { title: "Following", content: following ?? '---' },
+  ];
   return (
     <div className={styles.container}>
       {gitStatsData.map((gitStatsData) => {
