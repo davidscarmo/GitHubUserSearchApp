@@ -45,7 +45,7 @@ export const SearchBar: React.FC<SearchBarPropsInterface> = ({
     }
   };
 
-  const handleKeyBoardNavigation = (event: React.KeyboardEvent<HTMLInputElement> ) => {
+  const handleKeyBoardNavigation = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && username.length > 0) {
       getUserGitHubInfoData()
       return

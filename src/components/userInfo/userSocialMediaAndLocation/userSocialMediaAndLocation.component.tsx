@@ -9,18 +9,22 @@ import { UserSocialMediaPropsInterface } from "./userSocialMediaAndLocation.inte
 export const UserSocialMediaAndLocation: React.FC<UserSocialMediaPropsInterface> = ({ companyName, location, twitterUsername, website }) => {
   const userSocialMediaAndLocationData = [
     {
+      id: 'location',
       image: locationIcon,
       description: location,
     },
     {
+      id: 'website',
       image: webSiteIcon,
       description: website,
     },
     {
+      id: 'twitter',
       image: twitterIcon,
       description: twitterUsername,
     },
     {
+      id: 'companyName',
       image: companyIcon,
       description: companyName
     },
@@ -33,7 +37,7 @@ export const UserSocialMediaAndLocation: React.FC<UserSocialMediaPropsInterface>
           : "Not Available";
 
         return (
-          <div className={styles.linkContainer}>
+          <div className={styles.linkContainer} key={socialMediaAndLocation.id}>
             <div className={styles.imageContainer}>
               <img
                 src={socialMediaAndLocation.image}
