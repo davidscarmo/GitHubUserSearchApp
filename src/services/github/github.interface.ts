@@ -3,7 +3,7 @@ export interface GitHubProfileRequestResponseInterface {
   bio: string | null;
   blog: string | null;
   company: string | null;
-  created_at: string | null;
+  created_at: string;
   email: string | null;
   events_url: string | null;
   followers: number;

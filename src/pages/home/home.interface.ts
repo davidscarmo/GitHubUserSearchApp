@@ -1,16 +1,16 @@
 export interface UserInfoDataInterface {
-  avatar_url: string;
+  avatar_url: string | null;
   bio: string | null;
   blog: string | null;
   company: string | null;
-  followers: number;
-  following: number;
+  followers: number | null;
+  following: number | null;
   html_url: string | null;
-  id: number;
+  id: number | null;
   location: string | null;
-  login: string;
-  name: string;
-  public_repos: number;
+  login: string | null;
+  name: string | null;
+  public_repos: number | null;
   twitter_username: string | null;
-  created_at: string;
+  created_at: string | null;
 }

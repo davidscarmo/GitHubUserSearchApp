@@ -22,7 +22,7 @@ export const UserSocialMediaAndLocation: React.FC<UserSocialMediaPropsInterface>
     },
     {
       image: companyIcon,
-      description: companyName ? '@' + companyName : null
+      description: companyName
     },
   ];
   return (

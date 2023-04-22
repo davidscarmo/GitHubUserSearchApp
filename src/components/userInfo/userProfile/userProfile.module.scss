@@ -43,7 +43,7 @@
         }
         a {
           @include typographyHeading(h3);
-
+          text-decoration: none;
           cursor: url("../../../assets/icons/customCursor.svg"), auto;
 
           &:hover {

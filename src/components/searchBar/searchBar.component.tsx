@@ -5,22 +5,42 @@ import iconSearch from "../../assets/icons/iconSearch.svg";
 import { useRecoilState } from "recoil";
 import { themeState } from "../../atoms/themeState";
 import { getGitHubUserProfile } from "../../services/github/github.service";
-import { SearchBarPropsInterface } from "./searchButton.interface";
+import { LoadingSearchBarStatusEnum, SearchBarPropsInterface } from "./searchButton.interface";
+import { Loading } from "../loading/loading.component";
 export const SearchBar: React.FC<SearchBarPropsInterface> = ({
   setUserInfoData,
 }) => {
   const [theme] = useRecoilState(themeState);
   const [username, setUsername] = useState("");
   const [noResults, setNoResults] = useState(false)
+  const [loading, setLoading] = useState<{ status: LoadingSearchBarStatusEnum }>({ status: LoadingSearchBarStatusEnum.idle })
   const getUserGitHubInfoData = async () => {
     try {
+      setLoading({ status: LoadingSearchBarStatusEnum.processing })
       if (noResults) setNoResults(false)
 
       const userInfoData = await getGitHubUserProfile(username);
       setUserInfoData(userInfoData);
     } catch (error) {
-      setUserInfoData({});
+      setUserInfoData({
+        avatar_url: null,
+        bio: null,
+        blog: null,
+        company: null,
+        followers: null,
+        following: null,
+        html_url: null,
+        id: null,
+        location: null,
+        login: null,
+        name: null,
+        public_repos: null,
+        twitter_username: null,
+        created_at: null,
+      })
       setNoResults(true)
+    } finally {
+      setLoading({ status: LoadingSearchBarStatusEnum.finished })
     }
   };
 
@@ -46,7 +66,7 @@ export const SearchBar: React.FC<SearchBarPropsInterface> = ({
         onChange={(e) => setUsername(e.target.value)}
       />
       {noResults ? <span className={styles.noResults}>No results</span> : null}
-      <SearchButton getGitHubUserProfile={() => getUserGitHubInfoData()} />
+      <SearchButton getGitHubUserProfile={() => getUserGitHubInfoData()} loading={loading} />
     </div>
   );
 };

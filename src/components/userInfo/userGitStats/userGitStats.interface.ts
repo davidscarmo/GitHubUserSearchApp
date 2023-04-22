@@ -1,5 +1,5 @@
 export interface UserGitStatsPropsInterface {
-  followers: number;
-  following: number;
-  repos: number;
+  followers: number | null;
+  following: number | null;
+  repos: number | null;
 }

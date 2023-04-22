@@ -67,4 +67,8 @@ $themes: (
     lightTheme: invert(34%) sepia(93%) saturate(343%) hue-rotate(178deg)
       brightness(90%) contrast(75%),
   ),
+  loading-dots-color: (
+    darkTheme: $snow-white,
+    lightTheme: $snow-white,
+  ),
 );
