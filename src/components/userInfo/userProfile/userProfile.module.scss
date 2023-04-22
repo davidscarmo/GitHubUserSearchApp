@@ -10,7 +10,7 @@
         height: 7.3125rem;
         width: 7.3125rem;
       }
-      
+
       img {
         border-radius: 50%;
         width: 100%;
@@ -37,7 +37,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        @include desktopBreakpoint {
+          margin-bottom: 2.5rem;
+        }
         h1 {
           @include typographyHeading(h1);
         }
