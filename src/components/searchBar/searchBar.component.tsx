@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { SearchButton } from "./searchButton/searchButton.component";
 import styles from "./searchBar.module.scss";
 import iconSearch from "../../assets/icons/iconSearch.svg";
@@ -14,6 +14,7 @@ export const SearchBar: React.FC<SearchBarPropsInterface> = ({
   const [username, setUsername] = useState("");
   const [noResults, setNoResults] = useState(false)
   const [loading, setLoading] = useState<{ status: LoadingSearchBarStatusEnum }>({ status: LoadingSearchBarStatusEnum.idle })
+  const inputRef = useRef(null)
   const getUserGitHubInfoData = async () => {
     try {
       setLoading({ status: LoadingSearchBarStatusEnum.processing })
@@ -44,6 +45,12 @@ export const SearchBar: React.FC<SearchBarPropsInterface> = ({
     }
   };
 
+  const handleKeyBoardNavigation = (event: React.KeyboardEvent<HTMLInputElement> ) => {
+    if (event.key === 'Enter' && username.length > 0) {
+      getUserGitHubInfoData()
+      return
+    }
+  }
   return (
     <div
       className={styles.container}
@@ -64,6 +71,7 @@ export const SearchBar: React.FC<SearchBarPropsInterface> = ({
         placeholder="Search GitHub username…"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        onKeyDown={(e) => handleKeyBoardNavigation(e)}
       />
       {noResults ? <span className={styles.noResults}>No results</span> : null}
       <SearchButton getGitHubUserProfile={() => getUserGitHubInfoData()} loading={loading} />
