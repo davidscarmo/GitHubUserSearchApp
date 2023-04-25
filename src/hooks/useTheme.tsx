@@ -1,19 +1,19 @@
-import { useRecoilState } from "recoil";
-import { themeState } from "../atoms/themeState";
+import { useRecoilState } from 'recoil'
+import { themeState } from '../atoms/themeState'
 
 export const useTheme = () => {
-  const [theme, setTheme] = useRecoilState(themeState);
+  const [theme, setTheme] = useRecoilState(themeState)
 
   const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
+    const nextTheme = theme === 'light' ? 'dark' : 'light'
 
-    setTheme(nextTheme);
+    setTheme(nextTheme)
 
-    localStorage.setItem("theme", nextTheme);
+    localStorage.setItem('theme', nextTheme)
 
-    const htmlTag = document.getElementsByTagName("html")[0];
-    htmlTag.setAttribute("class", nextTheme);
-  };
+    const htmlTag = document.getElementsByTagName('html')[0]
+    htmlTag.setAttribute('class', nextTheme)
+  }
 
-  return { theme, toggleTheme };
-};
+  return { theme, toggleTheme }
+}

@@ -1,12 +1,13 @@
-import styles from "./userSocialMediaAndLocation.module.scss";
-import locationIcon from "../../../assets/icons/iconLocation.svg";
-import companyIcon from "../../../assets/icons/iconCompany.svg";
-import webSiteIcon from "../../../assets/icons/iconWebsite.svg";
-import twitterIcon from "../../../assets/icons/iconTwitter.svg";
-import { UserSocialMediaPropsInterface } from "./userSocialMediaAndLocation.interface";
+import styles from './userSocialMediaAndLocation.module.scss'
+import locationIcon from '../../../assets/icons/iconLocation.svg'
+import companyIcon from '../../../assets/icons/iconCompany.svg'
+import webSiteIcon from '../../../assets/icons/iconWebsite.svg'
+import twitterIcon from '../../../assets/icons/iconTwitter.svg'
+import { UserSocialMediaPropsInterface } from './userSocialMediaAndLocation.interface'
 
-
-export const UserSocialMediaAndLocation: React.FC<UserSocialMediaPropsInterface> = ({ companyName, location, twitterUsername, website }) => {
+export const UserSocialMediaAndLocation: React.FC<
+  UserSocialMediaPropsInterface
+> = ({ companyName, location, twitterUsername, website }) => {
   const userSocialMediaAndLocationData = [
     {
       id: 'location',
@@ -26,15 +27,15 @@ export const UserSocialMediaAndLocation: React.FC<UserSocialMediaPropsInterface>
     {
       id: 'companyName',
       image: companyIcon,
-      description: companyName
+      description: companyName,
     },
-  ];
+  ]
   return (
     <div className={styles.container}>
       {userSocialMediaAndLocationData.map((socialMediaAndLocation) => {
         const description = socialMediaAndLocation.description
           ? socialMediaAndLocation.description
-          : "Not Available";
+          : 'Not Available'
 
         return (
           <div className={styles.linkContainer} key={socialMediaAndLocation.id}>
@@ -49,8 +50,8 @@ export const UserSocialMediaAndLocation: React.FC<UserSocialMediaPropsInterface>
               <a>{description}</a>
             </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}

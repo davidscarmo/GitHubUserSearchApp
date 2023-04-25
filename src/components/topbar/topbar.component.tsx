@@ -1,5 +1,5 @@
-import { ThemeButton } from "../themeButtom/themeButton.component";
-import styles from "./topbar.module.scss";
+import { ThemeButton } from '../themeButtom/themeButton.component'
+import styles from './topbar.module.scss'
 
 export const TopBar = () => {
   return (
@@ -11,5 +11,5 @@ export const TopBar = () => {
         <ThemeButton />
       </div>
     </header>
-  );
-};
+  )
+}

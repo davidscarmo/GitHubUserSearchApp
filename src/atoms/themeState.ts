@@ -1,11 +1,10 @@
-import { atom } from "recoil";
+import { atom } from 'recoil'
 
 export const themeState = atom({
-  key: "themeState",
+  key: 'themeState',
   default:
-    localStorage.getItem("theme") ||
-    (window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"),
-});
-
+    localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'),
+})

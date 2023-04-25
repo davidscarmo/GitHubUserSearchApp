@@ -1,8 +1,8 @@
-import { LoadingSearchBarStatusEnum } from "../searchButton.interface";
+import { LoadingSearchBarStatusEnum } from '../searchButton.interface'
 
 export interface SearchButtonPropsInterface {
-  getGitHubUserProfile: () => void;
+  getGitHubUserProfile: () => void
   loading: {
-    status: LoadingSearchBarStatusEnum;
-  };
+    status: LoadingSearchBarStatusEnum
+  }
 }

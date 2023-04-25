@@ -1,5 +1,5 @@
-import { UserInfoDataInterface } from "../../pages/home/home.interface";
+import { UserInfoDataInterface } from '../../pages/home/home.interface'
 
 export interface UserInfoPropsInterface {
-  userInfoProps: UserInfoDataInterface;
+  userInfoProps: UserInfoDataInterface
 }
